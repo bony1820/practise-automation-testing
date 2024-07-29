@@ -1,0 +1,11 @@
+.table tbody>tr>td {
+    padding: 0;
+}
+
+.table tbody>tr>td>div {
+    padding: 16px;
+}
+
+.ant-dropdown * li>i {
+    margin-right: 8px;
+}

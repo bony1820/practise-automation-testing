@@ -7,8 +7,8 @@ import { List } from 'antd';
 const data = [
   { name: "Bài tập 1", link: "/practise1" },
   { name: "Bài tập 2", link: "/practise2" },
-  { name: "Bài tập 3", link: "#" },
-  { name: "Bài tập 4", link: "#" },
+  { name: "Bài tập 3", link: "/practise3" },
+  { name: "Bài tập 4", link: "/practise4" },
   { name: "Bài tập 5", link: "#" },
   { name: "Thi cuối khoá", link: "#" }, 
 ];
