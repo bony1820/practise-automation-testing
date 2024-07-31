@@ -1,7 +1,6 @@
 import React from "react";
 import { createCache, extractStyle, StyleProvider } from "@ant-design/cssinjs";
 import Document, { Head, Html, Main, NextScript } from "next/document";
-import type { DocumentContext } from "next/document";
 
 const MyDocument = () => (
   <Html lang="en">
@@ -13,7 +12,7 @@ const MyDocument = () => (
   </Html>
 );
 
-MyDocument.getInitialProps = async (ctx: DocumentContext) => {
+MyDocument.getInitialProps = async (ctx) => {
   const cache = createCache();
   const originalRenderPage = ctx.renderPage;
   ctx.renderPage = () =>

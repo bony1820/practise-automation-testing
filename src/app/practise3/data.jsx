@@ -20,7 +20,7 @@ const menu = (value) => (
   </Menu>
 );
 
-const handleMenuClick = (info: String) => {
+const handleMenuClick = (info) => {
   message.info(info)
 };
 

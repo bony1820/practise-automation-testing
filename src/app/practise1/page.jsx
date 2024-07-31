@@ -4,7 +4,7 @@ import React from "react";
 import { Form, Input, Button } from "antd";
 
 const RegistrationForm = () => {
-  const onFinish = (values: Object) => {
+  const onFinish = (values) => {
     console.log("Received values of form: ", values);
   };
 
