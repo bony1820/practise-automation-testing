@@ -1,23 +1,33 @@
 "use client";
 // pages/index.js
-import React, { useState } from 'react';
-import { List, Menu, Dropdown, message, Divider, Space } from 'antd';
-import Title from 'antd/es/typography/Title';
+import React, { useState } from "react";
+import { List, Menu, Dropdown, message, Divider, Space } from "antd";
+import Title from "antd/es/typography/Title";
 import { Table } from "antd";
 import { columns, data } from "./data";
 // import "antd/dist/antd.css";
 import "./style.css";
 import { Button } from "antd";
-
+import { Skeleton } from "antd";
+import { useEffect } from "react";
 
 const Practise3 = () => {
+  const [loading, setLoading] = useState(true);
   const showAlert = () => {
     alert("Hello world");
   };
 
   const showPrompt = () => {
     prompt("Please enter your message:", "");
-  }
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 10000); // 10 giây
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div style={{ paddingLeft: 200 }}>
@@ -34,11 +44,11 @@ const Practise3 = () => {
       <Divider />
       <Space size={10} />
       <div style={{ textAlign: "left" }}>
-        <Button type="primary" onClick={showAlert} style={{marginRight: 10}}>
+        <Button type="primary" onClick={showAlert} style={{ marginRight: 10 }}>
           Show Alert
         </Button>
-        
-        <Button type="primary" onClick={showPrompt} style={{ marginRight: 10}}>
+
+        <Button type="primary" onClick={showPrompt} style={{ marginRight: 10 }}>
           Show Prompt
         </Button>
 
@@ -46,7 +56,13 @@ const Practise3 = () => {
           Show Window
         </Button>
 
-
+        <div className={"container"}>
+          {loading && <Skeleton active className={"skeleton"} />}
+          <h1 className={"header"}>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.         
+          </h1>
+        </div>
       </div>
     </div>
   );
