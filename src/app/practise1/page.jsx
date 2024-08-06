@@ -1,11 +1,15 @@
 "use client";
 // pages/index.js
 import React from "react";
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, notification } from "antd";
 
 const RegistrationForm = () => {
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
+    notification.success({
+      message: 'Success',
+      description: `Create user ${values?.username} success`,
+    });
   };
 
   return (
