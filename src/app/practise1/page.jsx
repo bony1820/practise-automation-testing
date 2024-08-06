@@ -4,12 +4,15 @@ import React from "react";
 import { Form, Input, Button, notification } from "antd";
 
 const RegistrationForm = () => {
+  const [form] = Form.useForm();
+
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
     notification.success({
       message: 'Success',
       description: `Create user ${values?.username} success`,
     });
+    form.resetFields();
   };
 
   return (
@@ -18,6 +21,7 @@ const RegistrationForm = () => {
       onFinish={onFinish}
       layout="vertical"
       style={{ maxWidth: "400px", margin: "0 auto", paddingTop: "50px" }}
+      form={form}
     >
       <Form.Item
         label="First Name"
