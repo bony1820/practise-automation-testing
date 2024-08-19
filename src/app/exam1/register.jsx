@@ -46,7 +46,7 @@ const RegisterPage = ({ handleRegister }) => {
             {
               required: true,
               message: "Please input collection cycle(seconds)!",
-              type: "number"
+              // type: "number"
             },
           ]}
         >
