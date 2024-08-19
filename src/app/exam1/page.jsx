@@ -6,6 +6,7 @@ import RegisterPage from "./register"; // Import your RegisterPage component
 import UserListPage from "./user-list"; // Import your UserListPage component
 import styles from "./user-management.module.css"; // Add your CSS styles
 import { validCurrentTimeIsAfterSpecifyTime } from "~/utils/timeUtil";
+import CountdownTimer from "~/components/CountDownTime"
 
 const UserManagementPage = () => {
   const [users, setUsers] = React.useState([
@@ -42,7 +43,7 @@ const UserManagementPage = () => {
   const specifyTime = "2024-08-19 17:10:00"; // Thời gian chỉ định (VD: 2024-08-19 17:10:00)
   const result = validCurrentTimeIsAfterSpecifyTime(specifyTime);
   console.log(`Thời gian hiện tại có sau ${specifyTime} không? ${result}`);
-  if (!result) return null;
+  if (!result) return <CountdownTimer specifyTime={specifyTime}/>;
 
   return (
     <div className={styles.userManagement}>
