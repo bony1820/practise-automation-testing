@@ -11,6 +11,7 @@ const data = [
   { name: "Bài tập 4", link: "/practise4" },
   { name: "Bài tập 5", link: "/practise5" },
   { name: "Bài tập 6", link: "/practise6" },
+  { name: "Kiểm tra giữa khoá", link: "/exam1" },
   { name: "Thi cuối khoá", link: "#" }, 
 ];
 

@@ -1,0 +1,31 @@
+/* user-management.module.css */
+
+/* Layout for the user management page */
+.userManagement {
+    display: flex;
+    gap: 20px;
+    /* Adjust the gap between left and right panels */
+}
+
+/* Styles for the left panel (form) */
+.leftPanel {
+    flex: 1;
+    /* Expand to fill available space */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Styles for the right panel (user list) */
+.rightPanel {
+    flex: 2;
+    /* Expand to fill available space */
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Additional styles for form elements, buttons, etc. */
+/* Customize as needed */
