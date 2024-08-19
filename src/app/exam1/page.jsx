@@ -40,7 +40,7 @@ const UserManagementPage = () => {
     setUsers((data) => data.filter((item) => item?.id != user?.id));
   };
 
-  const specifyTime = "2024-08-19 17:10:00"; // Thời gian chỉ định (VD: 2024-08-19 17:10:00)
+  const specifyTime = "2024-08-19 17:15:00"; // Thời gian chỉ định (VD: 2024-08-19 17:10:00)
   const result = validCurrentTimeIsAfterSpecifyTime(specifyTime);
   console.log(`Thời gian hiện tại có sau ${specifyTime} không? ${result}`);
   if (!result) return <CountdownTimer specifyTime={specifyTime}/>;
