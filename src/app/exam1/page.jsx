@@ -5,6 +5,7 @@ import React from "react";
 import RegisterPage from "./register"; // Import your RegisterPage component
 import UserListPage from "./user-list"; // Import your UserListPage component
 import styles from "./user-management.module.css"; // Add your CSS styles
+import { validCurrentTimeIsAfterSpecifyTime } from "~/utils/timeUtil";
 
 const UserManagementPage = () => {
   const [users, setUsers] = React.useState([
@@ -29,7 +30,7 @@ const UserManagementPage = () => {
         explanation: user.explanation,
         policy: user.policy,
         timeCycle: user.timeCycle,
-        tag: user.tag
+        tag: user.tag,
       },
     ]);
   };
@@ -37,6 +38,12 @@ const UserManagementPage = () => {
   const onDeleteUser = (user) => {
     setUsers((data) => data.filter((item) => item?.id != user?.id));
   };
+
+  const specifyTime = "2024-08-19 17:10:00"; // Thời gian chỉ định (VD: 2024-08-19 17:10:00)
+  const result = validCurrentTimeIsAfterSpecifyTime(specifyTime);
+  console.log(`Thời gian hiện tại có sau ${specifyTime} không? ${result}`);
+  if (!result) return null;
+
   return (
     <div className={styles.userManagement}>
       <div className={styles.leftPanel}>
