@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "antd";
 import moment from "moment";
 
-const CountdownTimer = ({ specifyTime }) => {
+const CountdownTimer = ({ specifyTime, onReloadPage }) => {
   const specifiedMoment = moment(specifyTime, "YYYY-MM-DD HH:mm:ss");
   const [remainingTime, setRemainingTime] = useState(
     specifiedMoment.diff(moment(), "seconds")
@@ -25,6 +25,12 @@ const CountdownTimer = ({ specifyTime }) => {
       clearInterval(intervalId);
     };
   }, [isActive]);
+
+  useEffect(() => {
+    if (remainingTime < 0) {
+      onReloadPage?.();
+    }
+  }, [remainingTime, onReloadPage])
 
   const handleStart = () => {
     setIsActive(true);
