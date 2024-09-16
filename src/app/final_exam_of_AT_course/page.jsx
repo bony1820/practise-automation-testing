@@ -45,17 +45,16 @@ const UserManagementPage = () => {
   // const result = validCurrentTimeIsAfterSpecifyTime(specifyTime);
   // console.log(`Thời gian hiện tại có sau ${specifyTime} không? ${result}`);
   // if (!result) return <CountdownTimer specifyTime={specifyTime} onReloadPage={() => setReload(prev => !prev)}/>;
-  return null;
-  // return (
-  //   <div className={styles.userManagement}>
-  //     <div className={styles.leftPanel}>
-  //       <RegisterPage handleRegister={handleRegister} />
-  //     </div>
-  //     <div className={styles.rightPanel}>
-  //       <UserListPage users={users} onDeleteUser={onDeleteUser} />
-  //     </div>
-  //   </div>
-  // );
+  return (
+    <div className={styles.userManagement}>
+      <div className={styles.leftPanel}>
+        <RegisterPage handleRegister={handleRegister} />
+      </div>
+      <div className={styles.rightPanel}>
+        <UserListPage users={users} onDeleteUser={onDeleteUser} />
+      </div>
+    </div>
+  );
 };
 
 export default UserManagementPage;
