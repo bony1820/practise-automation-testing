@@ -49,8 +49,8 @@ const RegisterPage = ({ handleRegister }) => {
           ]}
         >
           <Select>
-            <Select.Option value="admin">YES</Select.Option>
-            <Select.Option value="user">NO</Select.Option>
+            <Select.Option value="YES">YES</Select.Option>
+            <Select.Option value="NO">NO</Select.Option>
           </Select>
         </Form.Item>
         <Form.Item label="Status" name="status" initialValue={"Disable"}>
